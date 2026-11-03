@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+t<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -138,7 +138,7 @@
     </main>
 
     <footer>
-        <p>Archive Application</p>
+        <p>Secret Files ni Lars</p>
     </footer>
 </body>
 </html>
