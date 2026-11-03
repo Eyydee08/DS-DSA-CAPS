@@ -1,0 +1,96 @@
+/* Basic page layout keeps the website plain and easy to understand. */
+body {
+    max-width: 850px;
+    margin: 20px auto;
+    padding: 0 15px;
+    color: #222;
+    background: #f5f5f5;
+    font-family: Arial, sans-serif;
+}
+
+/* The header is centered above the main archive content. */
+header,
+footer {
+    padding: 12px;
+    text-align: center;
+    background: #e5e5e5;
+    border: 1px solid #ccc;
+}
+
+/* Each section is a simple white box with a thin border. */
+section {
+    margin: 18px 0;
+    padding: 15px;
+    background: #fff;
+    border: 1px solid #ccc;
+}
+
+/* Form labels and controls are stacked to make the form straightforward. */
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input,
+textarea {
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 4px;
+    padding: 8px;
+    border: 1px solid #999;
+}
+
+/* Buttons use the browser's plain appearance with a small amount of spacing. */
+button {
+    margin-top: 12px;
+    padding: 7px 12px;
+    cursor: pointer;
+}
+
+/* Archive records are separated with a simple line. */
+.archive-item {
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.archive-item:last-child {
+    border-bottom: 0;
+}
+
+/* The edit link and delete form appear next to each other. */
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.actions form {
+    display: inline;
+}
+
+.inline-form {
+    display: inline;
+}
+
+.inline-form button {
+    margin: 4px 0;
+}
+
+.actions button {
+    margin: 0;
+}
+
+.delete-button {
+    color: #8b0000;
+}
+
+.cancel-link {
+    margin-left: 8px;
+}
+
+/* A message stands out after adding, editing, or deleting a record. */
+.message {
+    padding: 10px;
+    background: #e8f4e8;
+    border: 1px solid #9c9;
+}

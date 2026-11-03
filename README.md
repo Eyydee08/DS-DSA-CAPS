@@ -1,31 +1,34 @@
-# Simple Website Archive
+# Archive Web Application
 
-A small PHP and MySQL archive catalog made for a local XAMPP installation. It
-lets you add, search, edit, and delete archive entries.
+A PHP and MySQL archive catalog demonstrating normalized relational storage,
+prepared-statement database access, and in-memory MergeSort.
 
-## Run it with XAMPP
+## Run with XAMPP
 
-1. Copy this folder into `C:\xampp\htdocs\da_dsa` (or use this folder in place).
-2. Open the XAMPP Control Panel and start **Apache** and **MySQL**.
-3. Open `http://localhost/phpmyadmin`.
-4. Choose **Import**, select the existing `database.sql` file (currently in the
-   `unused` folder), and run the import. The script creates the `website_archive`
-   database and its `archive_items` table.
-5. In phpMyAdmin, import `archive_files.sql` into the same database. It creates the
-   table used to connect uploaded files to archive entries.
-6. Visit `http://localhost/da_dsa/`.
-   To view every uploaded attachment, open `http://localhost/da_dsa/archive_files.php`.
+1. Place the project at `C:\xampp\htdocs\da_dsa`.
+2. Start Apache and MySQL from the XAMPP Control Panel.
+3. Import the root-level `schema.sql` in phpMyAdmin. It creates the
+   `website_archive` database, its tables, and sample category/archive records.
+4. Visit `http://localhost/da_dsa/`.
 
-The default connection settings in `connect.php` are for XAMPP's usual local MySQL
-setup (`127.0.0.1`, user `root`, and no password). If your MySQL settings are
-different, update the host, database, username, and password at the top of
-`connect.php`. The connection selects the `website_archive` database; the
-website reads and writes the `archive_items` and `archive_files` tables inside it.
+The default connection in `config/database.php` uses `127.0.0.1`, the `root`
+account, and an empty password. Update those settings to match your local MySQL
+installation if needed.
 
-## Attach files
+## Features
 
-When adding or editing an entry, select up to five files (10 MB each). The site
-accepts PDF, Word, Excel, and PowerPoint documents, text and CSV files, common
-image types, and ZIP files. Attachments are stored outside the public website
-folder and downloaded through `download.php`. Deleting an entry also removes its
-attachments.
+- Add, edit, search, and delete archive records.
+- Filter records by category and keyword.
+- Store up to five attachments per archive entry; uploaded files are stored
+  outside the public web root and downloaded through `download.php`.
+- New category names are added to the normalized `categories` table.
+- All user-supplied SQL values use PDO prepared statements.
+
+## Project structure
+
+- `config/`: PDO connection
+- `controllers/`: request handling and database operations
+- `dsa/`: in-memory MergeSort implementation
+- `views/`: archive page rendering
+- `schema.sql`: database schema, constraints, and seed data
+- `TECHNICAL-SUMMARY.md`: DSA workflow and complexity analysis
